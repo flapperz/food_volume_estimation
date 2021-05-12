@@ -1,3 +1,6 @@
+import sys, os
+print(os.path.dirname(os.path.realpath(__file__)))
+
 import os
 import argparse
 import numpy as np
@@ -7,8 +10,8 @@ from keras.models import Model
 from keras.optimizers import Adam
 from keras.callbacks import LearningRateScheduler, LambdaCallback
 import keras.preprocessing.image as pre
-from food_volume_estimation.depth_estimation.custom_modules import *
-from food_volume_estimation.depth_estimation.networks import NetworkBuilder
+from custom_modules import *
+from networks import NetworkBuilder
 
 
 class MonovideoModel:
