@@ -250,12 +250,12 @@ class VolumeEstimator():
             print('[*] Ellipse parameters:', ellipse_params_scaled)
             # Find the scaling factor to match prior 
             # and measured plate diameters
-            plate_point_1 = [int(ellipse_params_scaled[2] 
-                             * np.sin(ellipse_params_scaled[4]) 
-                             + ellipse_params_scaled[1]), 
-                             int(ellipse_params_scaled[2] 
-                             * np.cos(ellipse_params_scaled[4]) 
-                             + ellipse_params_scaled[0])]
+            plate_point_1 = [int(ellipse_params_scaled[2] #a
+                             * np.sin(ellipse_params_scaled[4]) #theta 
+                             + ellipse_params_scaled[1]), #cy
+                             int(ellipse_params_scaled[2] #a
+                             * np.cos(ellipse_params_scaled[4]) #theta
+                             + ellipse_params_scaled[0])] #cx
             plate_point_2 = [int(-ellipse_params_scaled[2] 
                              * np.sin(ellipse_params_scaled[4]) 
                              + ellipse_params_scaled[1]),
