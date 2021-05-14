@@ -42,6 +42,8 @@ def preprocess_directory(file_paths, dst_root, stride=1):
                     break
 
                 if i%stride == 0:
+                    if (frame.shape[0] > frame.shape[1]):
+                        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
                     cv2.imwrite(f'{dst_root}\\{folder_index}\\{folder_index}_{i}.jpg', frame)
                     processed_i += 1
                 
@@ -57,7 +59,7 @@ if __name__ == '__main__':
                         help='source root directory')
     parser.add_argument('dst',
                         help='destination root directory')
-    parser.add_argument('--stride','-S', default=1)
+    parser.add_argument('--stride','-S', type=int, default=1)
                     
     args = parser.parse_args()
 
