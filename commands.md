@@ -1,3 +1,5 @@
+# COLAB or UNIX
+
 ```
 !python '/content/drive/MyDrive/Senior Project/repo/food_volume_estimation/food_volume_estimation/depth_estimation/data_utils.py' \
 --create_set_df \
@@ -5,10 +7,20 @@
 --save_target '/content/drive/MyDrive/Senior Project/dataset/IP7_quick_out/df.csv' --stride 4
 ```
 
-WIN train
+# WINDOWS
+
+## Prepare Data
 
 ```
-$train_df = "G:\My Drive\senior-project\dataset\form\train_df.csv"
+python 'food_volume_estimation\depth_estimation\data_utils.py' --create_set_df `
+--data_source 'G:\My Drive\senior-project\dataset\form\data_sources.txt' `
+--save_target 'G:\My Drive\senior-project\dataset\form\df.csv' --stride 4
+```
+
+## Train
+
+```
+$train_df = "G:\My Drive\senior-project\dataset\form\df.csv"
 $config = "G:\My Drive\senior-project\dataset\form\config.json"
 $B = 8
 $E = 1
